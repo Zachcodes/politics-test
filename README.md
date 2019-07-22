@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# find-rep-api
+Super simple api to get results from http://whoismyrepresentative.com/api
 
-## Available Scripts
+#Installation
 
-In the project directory, you can run:
+* Install node (v6+)
+* Run `npm install` or `yarn`
+* Run `npm start`
+* Enjoy immensely.
 
-### `npm start`
+###Available endpoints: 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`/representatives/:state`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+_:state_ must be a valid state abbreviation (UT, WY, MO...etc)
 
-### `npm test`
+**response**
+```json
+{  
+   "success":true,
+   "results":[  
+      {  
+         "name":"Rob Bishop",
+         "party":"R",
+         "state":"UT",
+         "district":"1",
+         "phone":"202-225-0453",
+         "office":"123 Cannon House Office Building",
+         "link":"http://robbishop.house.gov"
+      },
+      {  
+         "name":"Jason Chaffetz",
+         "party":"R",
+         "state":"UT",
+         "district":"3",
+         "phone":"202-225-7751",
+         "office":"2464 Rayburn House Office Building",
+         "link":"http://chaffetz.house.gov"
+      },
+      {  
+         "name":"Jim Matheson",
+         "party":"D",
+         "state":"UT",
+         "district":"4",
+         "phone":"202-225-3011",
+         "office":"2211 Rayburn House Office Building",
+         "link":"http://matheson.house.gov"
+      },
+      {  
+         "name":"Chris Stewart",
+         "party":"R",
+         "state":"UT",
+         "district":"2",
+         "phone":"202-225-9730",
+         "office":"323 Cannon House Office Building",
+         "link":"http://stewart.house.gov"
+      }
+   ]
+}
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`/senators/:state`
 
-### `npm run build`
+_:state_ must be a valid state abbreviation (UT, WY, MO...etc)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**response**
+```json
+{  
+   "success":true,
+   "results":[  
+      {  
+         "name":"Orrin Hatch",
+         "party":"R",
+         "state":"UT",
+         "district":"Senior Seat",
+         "phone":"202-224-5251",
+         "office":"104 Hart Senate Office Building",
+         "link":"http://www.hatch.senate.gov"
+      },
+      {  
+         "name":"Mike Lee",
+         "party":"R",
+         "state":"UT",
+         "district":"Junior Seat",
+         "phone":"202-224-5444",
+         "office":"316 Hart Senate Office Building",
+         "link":"http://www.lee.senate.gov"
+      }
+   ]
+}
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
