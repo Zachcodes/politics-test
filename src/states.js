@@ -1,4 +1,4 @@
-export default {
+const states = {
   Alabama: 'AL',
   Alaska: 'AK',
   Arizona: 'AZ',
@@ -50,3 +50,9 @@ export default {
   Wisconsin: 'WI',
   Wyoming: 'WY'
 };
+
+export const orderedStates = Object.entries(states).sort((a, b) =>
+  a[0].localeCompare(b[0])
+);
+
+export default states;
