@@ -11,6 +11,7 @@ export function getSenatorsByState(state) {
 
 export function getRepsByState(state) {
   let data = axios.get(`/representatives/${state}`).then(res => res.data);
+  console.log('getREps', GET_REPRESENTATIVES);
   return {
     type: GET_REPRESENTATIVES,
     payload: data
