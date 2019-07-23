@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GET_SENATORS, GET_REPRESENTATIVES } from './actionTypes';
 
 export function getSenatorsByState(state) {
+  console.log('state', state);
   let data = axios.get(`/senators/${state}`).then(res => res.data);
   return {
     type: GET_SENATORS,

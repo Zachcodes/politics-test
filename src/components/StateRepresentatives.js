@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getRepsByState } from '../redux/actionCreators';
+import DisplayRep from './DisplayRep';
+import Div from '../styled/Div';
 
 class StateRepresentatives extends Component {
   componentDidMount() {
@@ -9,8 +11,15 @@ class StateRepresentatives extends Component {
   }
 
   render() {
-    console.log('this.props', this.props);
-    return <div>State Reps;</div>;
+    let { representatives, loading } = this.props;
+    if (loading) return <div>Loading...</div>;
+    return (
+      <Div flex direction="column">
+        {representatives.map(r => (
+          <DisplayRep key={r.name + r.district} rep={r} />
+        ))}
+      </Div>
+    );
   }
 }
 

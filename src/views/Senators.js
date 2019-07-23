@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import StateLink from '../components/StateLink';
+import { orderedStates } from '../states';
 
-class Senators extends Component {
-  render() {
-    console.log('senators props', this.props);
-    return <div>Senators</div>;
-  }
+export default function Senators({ match }) {
+  return (
+    <div>
+      {orderedStates.map(arr => {
+        return <StateLink key={arr[0] + arr[1]} stateArr={arr} match={match} />;
+      })}
+    </div>
+  );
 }
-
-let mapStateToProps = ({ senators }) => senators;
-
-export default connect(mapStateToProps)(Senators);
