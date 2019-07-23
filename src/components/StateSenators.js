@@ -17,7 +17,7 @@ class StateSenators extends Component {
     return (
       <Div flex direction="column">
         {senators.map(s => (
-          <Politician key={s.name + s.district} senator={s} />
+          <Politician key={s.name + s.district} politician={s} />
         ))}
       </Div>
     );

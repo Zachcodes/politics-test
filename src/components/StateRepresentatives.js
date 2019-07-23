@@ -21,7 +21,7 @@ class StateRepresentatives extends Component {
     return (
       <Div flex direction="column">
         {representatives.map(r => (
-          <Politician key={r.name + r.district} rep={r} />
+          <Politician key={r.name + r.district} politician={r} />
         ))}
       </Div>
     );

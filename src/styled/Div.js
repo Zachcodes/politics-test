@@ -9,6 +9,8 @@ const Div = styled.div`
       justify-content: ${justify ? justify : 'flex-start'};
       align-items: ${align ? align : 'initial'};
     `}
+  ${({ marginBottom }) =>
+    marginBottom ? `margin-bottom: ${marginBottom}px;` : null}
 `;
 
 export default Div;

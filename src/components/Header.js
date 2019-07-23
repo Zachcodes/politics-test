@@ -18,6 +18,7 @@ const NavLink = styled(Link)`
 export default function Header() {
   return (
     <Head flex justify="flex-end">
+      <NavLink to="/">Home</NavLink>
       <NavLink to="/senators">Senators</NavLink>
       <NavLink to="/representatives">Representatives</NavLink>
     </Head>
