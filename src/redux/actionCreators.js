@@ -1,20 +1,9 @@
 import axios from 'axios';
-import { GET_SENATORS, GET_REPRESENTATIVES } from './actionTypes';
 
-export function getSenatorsByState(state) {
-  console.log('state', state);
-  let data = axios.get(`/senators/${state}`).then(res => res.data);
+export function getPoliticianByState(state, endpoint, type) {
+  let data = axios.get(`/${endpoint}/${state}`).then(res => res.data);
   return {
-    type: GET_SENATORS,
-    payload: data
-  };
-}
-
-export function getRepsByState(state) {
-  let data = axios.get(`/representatives/${state}`).then(res => res.data);
-  console.log('getREps', GET_REPRESENTATIVES);
-  return {
-    type: GET_REPRESENTATIVES,
+    type,
     payload: data
   };
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function({ rep }) {
-  let { name, link, district, office, party, phone, state } = rep;
+export default function Politician({ politician }) {
+  let { name, link, district, office, party, phone, state } = politician;
   return (
     <div>
       <h3>{name}</h3>

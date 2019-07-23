@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getRepsByState } from '../redux/actionCreators';
-import DisplayRep from './DisplayRep';
+import { getPoliticianByState } from '../redux/actionCreators';
+import { GET_REPRESENTATIVES } from '../redux/actionTypes';
+import Politician from './Politician';
 import Div from '../styled/Div';
 
 class StateRepresentatives extends Component {
   componentDidMount() {
-    let { match, getRepsByState } = this.props;
-    getRepsByState(match.params.state);
+    let { match, getPoliticianByState } = this.props;
+    getPoliticianByState(
+      match.params.state,
+      'representatives',
+      GET_REPRESENTATIVES
+    );
   }
 
   render() {
@@ -16,7 +21,7 @@ class StateRepresentatives extends Component {
     return (
       <Div flex direction="column">
         {representatives.map(r => (
-          <DisplayRep key={r.name + r.district} rep={r} />
+          <Politician key={r.name + r.district} rep={r} />
         ))}
       </Div>
     );
@@ -27,5 +32,5 @@ let mapStateToProps = state => state.reps;
 
 export default connect(
   mapStateToProps,
-  { getRepsByState }
+  { getPoliticianByState }
 )(StateRepresentatives);

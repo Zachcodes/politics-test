@@ -7,8 +7,6 @@ const initialState = {
 };
 
 export default function(state = initialState, { type, payload }) {
-  console.log('type in rep', type);
-  console.log('payload in rep', payload);
   switch (type) {
     case GET_REPRESENTATIVES + '_PENDING':
       return { loading: true, representatives: [], error: false };
